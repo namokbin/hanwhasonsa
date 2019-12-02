@@ -86,12 +86,10 @@ $(function(){
     });     
   });
 
-//visual img even
+//visual slide
 $(function(){
     var $slides=$("#main_visual_wrap>.slide_container>li");
     var $pagination=$("#main_visual_wrap>.pagination_container>li");
-
-    // $("#main_visual_wrap").height($(window).height());
 
     function txt(){ //.on이 붙은 li의 자손 txt>wrap>p 하나씩 나타나는 함수
         $slides.filter('.on').find(".txt_wrap>p").stop().css({
@@ -126,9 +124,10 @@ $(function(){
             })
             txt();
             
-            
-            
             $pagination.filter('.on').removeClass("on").siblings().addClass("on");//페이지네이션 활성화
+            $pagination.on("click",function(evt){
+                evt.preventDefault();
+            });
         }, 3000);
     }
     
@@ -290,7 +289,6 @@ $(function(){
                 'transition-delay': '0.8s'
             });       
         },
-
         "mouseleave":function(){
             $(this).removeClass("hover_img");
             $(this).find($(".out")).stop().fadeIn(500);  
@@ -304,8 +302,6 @@ $(function(){
                 'transition-delay': 'initial'
             });            
         }
-
-
     });
 
 });
@@ -348,9 +344,7 @@ $(function(){
                 marginTop:0
             })
         }
-    });
-    
-
+    });  
 });
 
 //all_menu
