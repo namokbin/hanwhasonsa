@@ -1,3 +1,9 @@
+$(function(){
+    $("a").on("click",function(evt){
+        evt.preventDefault();
+    });
+});
+
 //submenu
 $(function(){
     var $gnb=$("header>.header_wrap>nav>.gnb>li");
