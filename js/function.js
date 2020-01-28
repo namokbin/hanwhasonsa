@@ -250,32 +250,96 @@ $(function(){
     var $container=$("#Business_wrap>.slides_wrap>.view_list>ol");
     var $view_list=$("#Business_wrap>.slides_wrap>.view_list>ol>.img");
     var nowIdx=0;
+    // var marginLeft=$container.css('margin-left').replace(/[^-\d\.]/g, '');
 
     $container.children().eq(nowIdx+1).siblings().addClass("bg_img");
     $container.children().eq(nowIdx+1).next().on("click",function(evt){
         evt.preventDefault();
 
             
-        $container.stop().animate({
-            marginLeft : -(1200*nowIdx)
-        }); 
+        // $container.stop().animate({
+        //     // marginLeft : -(1200*nowIdx)
+        //     // 'margin-left': marginLeft-1200
+        //     'margin-left': ($(this).css("margin-left").replace(/[^-\d\.]/g, ''))-1200
+        // }); 
     });
 
-    $btn.on("click",function(evt){
+    // $btn.on("click",function(evt){
+    //     evt.preventDefault();
+        
+    //     nowIdx = $btn.index(this);//인덱스값 추출
+    //     $btn.eq(nowIdx).addClass("on").siblings().removeClass("on");
+        
+    //     $container.stop().animate({
+    //         marginLeft : -(1200*nowIdx)
+    //     });
+
+    //     $container.children().eq(nowIdx+1).removeClass("bg_img").siblings().addClass("bg_img");
+    // });
+    $btn.eq(0).on("click",function(evt){
         evt.preventDefault();
         
         nowIdx = $btn.index(this);//인덱스값 추출
         $btn.eq(nowIdx).addClass("on").siblings().removeClass("on");
         
-        console.log(nowIdx);
+        $container.stop().animate({
+            marginLeft : -1800
+        });
+
+        $container.children().eq(nowIdx+1).removeClass("bg_img").siblings().addClass("bg_img");
+    });
+    
+    $btn.eq(1).on("click",function(evt){
+        evt.preventDefault();
+        
+        nowIdx = $btn.index(this);//인덱스값 추출
+        $btn.eq(nowIdx).addClass("on").siblings().removeClass("on");
         
         $container.stop().animate({
-            marginLeft : -(1200*nowIdx)
+            marginLeft : -3000
         });
 
         $container.children().eq(nowIdx+1).removeClass("bg_img").siblings().addClass("bg_img");
     });
 
+    $btn.eq(2).on("click",function(evt){
+        evt.preventDefault();
+        
+        nowIdx = $btn.index(this);//인덱스값 추출
+        $btn.eq(nowIdx).addClass("on").siblings().removeClass("on");
+        
+        $container.stop().animate({
+            marginLeft : -4200
+        });
+
+        $container.children().eq(nowIdx+1).removeClass("bg_img").siblings().addClass("bg_img");
+    });    
+
+    $btn.eq(3).on("click",function(evt){
+        evt.preventDefault();
+        
+        nowIdx = $btn.index(this);//인덱스값 추출
+        $btn.eq(nowIdx).addClass("on").siblings().removeClass("on");
+        
+        $container.stop().animate({
+            marginLeft : -5400
+        });
+
+        $container.children().eq(nowIdx+1).removeClass("bg_img").siblings().addClass("bg_img");
+    }); 
+
+    $btn.eq(4).on("click",function(evt){
+        evt.preventDefault();
+        
+        nowIdx = $btn.index(this);//인덱스값 추출
+        $btn.eq(nowIdx).addClass("on").siblings().removeClass("on");
+        
+        $container.stop().animate({
+            marginLeft : -6600
+        });
+
+        $container.children().eq(nowIdx+1).removeClass("bg_img").siblings().addClass("bg_img");
+    }); 
     //mouseenter event
     $view_list.on({
         
@@ -368,8 +432,6 @@ $(function(){
             $("body").addClass("menu_on");
             $(".all_menu").stop().fadeIn(600);
         };
-
-
     });
 
 
